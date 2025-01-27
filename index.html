@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Fun Fact Generator</h1>
+        <p id="fact"></p>
+        <button id="generate">Generate Another Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "I love hiking and have traveled to five national parks.",
+            "I am an avid reader and read around 28 books per year.",
+            "I once baked a 3-tiered cake for a family gathering!",
+            "I speak three languages fluently.",
+            "I'm learning to play the guitar in my free time."
+        ];
+
+        function generateFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        document.getElementById('generate').addEventListener('click', generateFact);
+
+        // Generate the first fact on page load
+        generateFact();
+    </script>
+</body>
+</html>
